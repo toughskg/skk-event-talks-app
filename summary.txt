@@ -1,0 +1,8 @@
+Summary of News Headlines - July 1, 2026
+
+This summary covers the key global events recorded in news.txt:
+
+- Geopolitics: Public friction rises in US-Iran peace talks, highlighting a rift between the US and Israel. Vice President JD Vance and Secretary of State Marco Rubio's national security approaches are under scrutiny. Southeast Asian countries (Cambodia, Laos, Vietnam) seek border cooperation.
+- Humanitarian & Climate: Venezuela faces a critical healthcare crisis after two earthquakes (death toll > 1,900). Severe heatwaves are affecting the US Midwest, Great Lakes, and parts of Czechia. July 1 also marks World Bronchiectasis Day.
+- Economy & Business: PT Pertamina cuts non-subsidized fuel prices in Indonesia. Air Liquide invests $170M in Indiana for advanced chip production. Allianz Risk Transfer AG moves its headquarters from Liechtenstein to Switzerland.
+- Sports: The FIFA World Cup 2026 continues with the USMNT playing Bosnia and Herzegovina in Santa Clara tonight.

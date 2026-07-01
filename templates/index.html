@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigQuery Release Notes Explorer</title>
+    <meta name="description" content="Explore and share the latest updates, features, and fixes from Google BigQuery.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for beautiful modern UI elements -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="dark-theme">
+    <div class="background-decorations">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar Dashboard -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <h2>BQ Release Hub</h2>
+            </div>
+
+            <div class="stats-card">
+                <div class="stats-header">
+                    <span>Overview</span>
+                    <i data-lucide="bar-chart-2"></i>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Notes</span>
+                        <span id="stat-total" class="stat-val">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Last Updated</span>
+                        <span id="stat-date" class="stat-val">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tweet Composer Card -->
+            <div class="tweet-panel-card">
+                <div class="panel-header">
+                    <i data-lucide="twitter" class="twitter-icon"></i>
+                    <h3>Tweet Composer</h3>
+                </div>
+                <p class="panel-sub">Select a release note or write a custom tweet about the updates.</p>
+                
+                <div class="composer-container">
+                    <textarea id="tweet-textarea" placeholder="Select a release note card to pre-fill content, or start typing here..."></textarea>
+                    <div class="composer-footer">
+                        <span id="char-counter" class="char-ok">0 / 280</span>
+                        <button id="tweet-btn" class="btn-primary" disabled>
+                            <i data-lucide="send"></i>
+                            Tweet Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <p>BigQuery Release Notes Explorer</p>
+                <span>v1.0.0</span>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1 id="main-heading">BigQuery Release Notes</h1>
+                    <p class="subtitle">Track updates, features, and improvements from Google Cloud BigQuery</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="search-input" placeholder="Search release notes...">
+                        <button id="clear-search-btn" class="icon-btn hide"><i data-lucide="x"></i></button>
+                    </div>
+                    <button id="refresh-btn" class="btn-secondary" title="Fetch latest release notes">
+                        <i data-lucide="refresh-cw" id="refresh-icon"></i>
+                        <span>Refresh Feed</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Active Filters Indicator -->
+            <div class="filters-container">
+                <div class="filter-group">
+                    <button class="filter-tag active" data-filter="all">All Updates</button>
+                    <button class="filter-tag" data-filter="feature">Features</button>
+                    <button class="filter-tag" data-filter="change">Changes</button>
+                    <button class="filter-tag" data-filter="deprecation">Deprecations</button>
+                    <button class="filter-tag" data-filter="fix">Fixes</button>
+                </div>
+                <div id="results-count" class="results-count">Showing all release notes</div>
+            </div>
+
+            <!-- Notes List Section -->
+            <section class="notes-feed">
+                <!-- Skeleton Loader -->
+                <div id="skeleton-loader" class="skeleton-container">
+                    <div class="skeleton-card">
+                        <div class="skeleton-header">
+                            <div class="skeleton-circle"></div>
+                            <div class="skeleton-line-long"></div>
+                        </div>
+                        <div class="skeleton-body">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line-short"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-header">
+                            <div class="skeleton-circle"></div>
+                            <div class="skeleton-line-long"></div>
+                        </div>
+                        <div class="skeleton-body">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line-short"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-header">
+                            <div class="skeleton-circle"></div>
+                            <div class="skeleton-line-long"></div>
+                        </div>
+                        <div class="skeleton-body">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line-short"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actual Feed Cards -->
+                <div id="notes-container" class="notes-container hide">
+                    <!-- Note Cards dynamically inserted here -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-state hide">
+                    <i data-lucide="package-open" class="empty-icon"></i>
+                    <h3>No Release Notes Found</h3>
+                    <p>No results match your search query or filters. Try adjusting your terms.</p>
+                    <button id="reset-filters-btn" class="btn-secondary">Reset Search & Filters</button>
+                </div>
+
+                <!-- Error State -->
+                <div id="error-state" class="error-state hide">
+                    <i data-lucide="alert-triangle" class="error-icon"></i>
+                    <h3>Failed to Retrieve Feed</h3>
+                    <p id="error-message">An unexpected error occurred while fetching the release notes feed.</p>
+                    <button id="retry-btn" class="btn-primary">
+                        <i data-lucide="refresh-cw"></i>
+                        Retry Fetch
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hide">
+        <div class="toast-content">
+            <i data-lucide="check-circle" class="toast-icon"></i>
+            <span id="toast-message">Success!</span>
+        </div>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

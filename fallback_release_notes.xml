@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BigQuery Release Notes</title>
+  <updated>2026-06-30T00:00:00Z</updated>
+  <id>tag:google.com,2026:bigquery-release-notes</id>
+  <link rel="alternate" type="text/html" href="https://cloud.google.com/bigquery/docs/release-notes"/>
+  <link rel="self" type="application/atom+xml" href="https://cloud.google.com/feeds/bigquery-release-notes.xml"/>
+  
+  <entry>
+    <title>June 30, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-30</id>
+    <updated>2026-06-30T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_30_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Hybrid Search (Preview):&lt;/strong&gt; You can now combine semantic search with lexical (keyword) search using the &lt;code&gt;VECTOR_SEARCH&lt;/code&gt; function. For tables with autonomous embedding generation, the &lt;code&gt;AI.SEARCH&lt;/code&gt; function supports a &lt;code&gt;HYBRID&lt;/code&gt; mode to simplify query syntax.&lt;/p&gt;&lt;p&gt;Additionally, vector indexes can now be extended with keyword information to accelerate lexical search performance.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>June 25, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-25</id>
+    <updated>2026-06-25T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_25_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Simba ODBC Driver Update:&lt;/strong&gt; An updated version of the Simba ODBC driver for BigQuery has been released. This release includes stability enhancements and bug fixes. For more information, see the driver documentation.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>June 23, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-23</id>
+    <updated>2026-06-23T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_23_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Conversational Analytics (General Availability):&lt;/strong&gt; BigQuery's conversational analytics features are now generally available. This release includes new options to control whether analytical agents use generally available models or a mix of preview and GA models.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>June 22, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-22</id>
+    <updated>2026-06-22T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_22_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Reservation Assignments (Preview):&lt;/strong&gt; You can now specify an optional &lt;code&gt;principal&lt;/code&gt; property on BigQuery reservation assignments. This allows you to route queries to specific reservations based on the identity of the user, service account, or third-party identity executing the job.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>June 17, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-17</id>
+    <updated>2026-06-17T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_17_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Trigger-based Scheduling (Preview):&lt;/strong&gt; BigQuery pipelines can now be configured to trigger executions automatically based on updates to specific BigQuery tables, simplifying event-driven data ingestion.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>June 15, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-15</id>
+    <updated>2026-06-15T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_15_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Extended Access for Pipelines:&lt;/strong&gt; When running or scheduling data preparations and pipelines with user credentials, you can now grant them access to additional services. Data preparations can access Google Drive, and pipelines can access Google Drive, Bigtable, and Knowledge Catalog (available in Preview).&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>June 12, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-12</id>
+    <updated>2026-06-12T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_12_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Autonomous Embedding Generation (GA):&lt;/strong&gt; The feature that automatically generates or updates embedding columns when source data is modified has reached General Availability (GA).&lt;/p></content>
+  </entry>
+  <entry>
+    <title>June 01, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-06-01</id>
+    <updated>2026-06-01T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#June_01_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Legacy SQL Availability Change:&lt;/strong&gt; As of June 1, 2026, legacy SQL has become unavailable for organizations and projects that did not use it during the evaluation period (November 1, 2025, to June 1, 2026). Please migrate existing queries to Standard SQL.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>May 27, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-05-27</id>
+    <updated>2026-05-27T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#May_27_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;BigQuery Studio Git Integration:&lt;/strong&gt; BigQuery Studio introduced direct integration with remote Git repositories, enabling users to manage and version-control SQL scripts and notebooks directly within the BigQuery workspace.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>May 20, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-05-20</id>
+    <updated>2026-05-20T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#May_20_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Multi-Region Analytics Hub Listings:&lt;/strong&gt; Analytics Hub listings now support configuring data sharing across multiple regions simultaneously to facilitate global access to datasets and linked replicas.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>May 18, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-05-18</id>
+    <updated>2026-05-18T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#May_18_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Migration Service Billing Requirement:&lt;/strong&gt; Effective May 18, 2026, all users are required to have an active Cloud Billing account linked to their project to utilize the BigQuery Migration Service.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>May 06, 2026</title>
+    <id>tag:google.com,2026:bigquery-release-notes:2026-05-06</id>
+    <updated>2026-05-06T00:00:00Z</updated>
+    <link href="https://cloud.google.com/bigquery/docs/release-notes#May_06_2026"/>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Data Transfer Service Cost Labels:&lt;/strong&gt; The scope of cost labels was expanded to cover all costs associated with the BigQuery Data Transfer Service, including data transfer orchestration, load operations, and merge operations.&lt;/p&gt;</content>
+  </entry>
+</feed>
